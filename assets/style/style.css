@@ -1,6 +1,13 @@
 body {
     /* background-image: url('../img/avi-werde-hHz4yrvxwlA-unsplash.jpg'); */
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /*  */
+    font-family: Arial, Helvetica, sans-serif;
     font-size: large;
+}
+
+#hero{
+    background-image: url("../img/avi-werde-hHz4yrvxwlA-unsplash.jpg");
+    /* cover escala la imagen para que quepa en el contenedor */
+    background-size: cover;
 }
 
