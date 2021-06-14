@@ -1,0 +1,22 @@
+body {
+    background-image: url(/assets/img/log-cabin-1886620_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.formulario{
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0,0 30px rgb(0, 0, alpha);
+    color: white;
+}
+
+.enviar{
+    background: #222A3F;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700!important;
+    color: white;
+}

@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style/login.css">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/style/login.css">
 </head>
 <body>
-    <!-- Wendy -->
+    <div class="container">
+        <div class="row justify-content-center pt-5 mt-5 mr-1">
+            <div class="col-md-4 formulario">
+                <form action="">
+                  <div class="form-group text-center">
+                     <h1 class="text-light">Inicio de Sesión</h1>
+                     <h2 class="text-ligth">Administrador de casas</h2>
+                  </div>
+                  <div class="form-group mx-sm-4">
+                    <label for="Usuario" class="form-label" style="font-size: 20px;">Usuario:</label>
+                    <input type="text" class="form-control" id="usuario">
+                  </div>
+                  <div class="form-group mx-sm-4">
+                    <label for="password" class="form-label" style="font-size: 20px;">Contraseña:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                  <div class="form-group row g-3 mt-1">
+                    <input type="submit" class="btn btn-black enviar" value="Enviar">
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
