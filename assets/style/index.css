@@ -11,3 +11,10 @@ body {
     background-size: cover;
 }
 
+.card {
+    /* 1rem = 10px */
+    width: 24rem;
+    /* El padding al 0% es para que la imágen ocupe el 100% del espacio designado en la tajeta */
+    padding: 0%;
+    margin: .8rem;
+}
