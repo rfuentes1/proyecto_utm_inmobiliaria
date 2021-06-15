@@ -1,5 +1,5 @@
 body {
-    background-image: url(/assets/img/log-cabin-1886620_1280.jpg);
+    background-image: url("../img/log-cabin-1886620_1280.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
