@@ -72,3 +72,7 @@ main h1 {
     text-align: center;
     position: relative;
 }
+
+#logo {
+    margin-top: 10px;
+}
