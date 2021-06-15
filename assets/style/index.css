@@ -18,6 +18,11 @@ header {
 
 }
 
+#header{
+    background-color: #00000070;
+    color: #fff;
+}
+
 /* navbar */
 .navbar {
     position: relative;
@@ -30,18 +35,13 @@ header {
     justify-content: center;
 }
 
-element.style {
-    background-image: url(/assets/img/avi-werde-hHz4yrvxwlA-unsplash.jpg);
-
-}
-
 .card {
     /* 1rem = 10px */
     /* width es para lo ancho de la tarjeta y height para lo alto> */
     width: 23rem;
     height: 23.5rem;
-    /* El padding al 0% es para que la imágen ocupe el 100% del espacio designado en la tajeta */
-    padding: 0%;
+    /* El padding al 0 es para que la imágen ocupe el 100% del espacio designado en la tajeta */
+    padding: 0;
     margin: .8rem;
     color: black;
     border-radius: 2%;
@@ -75,4 +75,5 @@ main h1 {
 
 #logo {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
