@@ -1,0 +1,29 @@
+body {
+    background-image: url(../img/living-room-1835923_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.gestion{
+    background: rgb(129, 129, 129);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0,0 30px rgb(0, 0, alpha);
+    color: white;
+}
+.precio input{
+    width: 120px;
+}
+.terreno input{
+    width: 120px;
+}
+.botones_casas input{
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+#mapa{
+    height: 400px;
+    width: 545px;
+}
+

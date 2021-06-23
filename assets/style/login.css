@@ -14,9 +14,15 @@ body {
 }
 
 .enviar{
+    width: 340px;
     background: #222A3F;
     padding: 10px;
     font-size: 18px;
     font-weight: 700!important;
+    color: white;
+}
+
+a.registrate {
+    font-size: 18px;
     color: white;
 }
