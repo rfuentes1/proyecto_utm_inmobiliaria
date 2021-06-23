@@ -12,8 +12,7 @@ header {
 
     /* cover escala la imagen para que quepa en el contenedor */
     background-size: cover;
-    height: 870px;
-    width: 95%;
+    height: 760px;
     position: relative;
 
 }
@@ -61,19 +60,21 @@ main {
 }
 
 /* Esto es para poner el título centrado y con color */
-main h1 {
+main h2 {
     color: #748087;
     text-align: center;
+    margin-top: 18px;
 }
 
-.hero-search {
-    margin-top: -104px;
-    padding: 29px;
-    text-align: center;
-    position: relative;
+#filters{
+    height: 67%;
 }
 
 #logo {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.bg-success{
+    background-color:#2B7B6D;
 }
