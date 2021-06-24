@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/style/registro.css">
 </head>
 <body>
-
+    <a href="/login.html"><input type="button" class="regresologin" value="Regresar"></a>
     <div class="container">
-        <div class="row justify-content-center pt-5 mt-5 mr-1">
+        <div class="row justify-content-center pt-3 mt-3 mr-1">
             <div class="col-md-8 registro">
                 <form action="">
                     <div class="form-group text-center row mb-4">
@@ -58,10 +58,13 @@
                                 <input type="text" class="form-control" id="estado" placeholder="Escribe tu estado">
                             </div>
                         </div>
-                        <div class="form-group text-center">
-                            <label>Fotografía</label>
-                            <div class="fotografia">
-
+                        <div class="form-group text-center row mb-3">
+                            <label style="margin-bottom: 15px;">Fotografía</label>
+                            <div class="row mb-3 fotografia">
+                                <div id="cargar_imagen" class="row mb-3">
+                                    <input class="form-control" id="subir_img" type="file" accept="image/*" />
+                                </div>
+                                <div id="vista_previa"></div>                               
                             </div>
                         </div>
                         </fieldset>
@@ -84,14 +87,14 @@
                         </fieldset>
                     </div>
                     <div class="form-group row g-3 mt-1">
-                        <a href="/login.html"><input type="button" class="registrar" value="Enviar"></a>
+                        <a href="/login.html"><input type="button" class="registrar" value="Registrar"></a>
                       </div>
                 </form>
             </div>
         </div>
     </div>
    
-
+    <script src="/assets/js/previsualizacion_imagen.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

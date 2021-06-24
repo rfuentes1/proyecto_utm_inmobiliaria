@@ -10,10 +10,10 @@
     
 </head>
 <body>
-
+    <a href="/login.html"><input type="button" class="cerrarsesion" value="Cerrar sesión"></a>
     <div class="container">
         <div class="row justify-content-center pt-4 mt-4 mr-1">
-            <div class="col-md-6 gestion">
+            <div class="col-md-8 gestion">
                 <form action="">
                     <div class="form-group text-center">
                         <h1>Gestión de casas</h1>
@@ -24,7 +24,10 @@
                     </div>
                     <div class="form-group mb-3 row mx-sm-4">
                         <label for="galeriafotos" class="form-label">Galeria de fotos:</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        <div id="cargar_imagen" class="row mb-3">
+                            <input class="form-control" id="subir_img" type="file" accept="image/*" multiple>
+                        </div>
+                        <div id="vista_previa"></div>
                     </div>
                     <div class="form-group mb-3 row  mx-sm-4 precio">
                         <label for="preciocasa">Precio:</label>
@@ -93,30 +96,62 @@
                         <div id="mapa"></div>
                    </div>
 
-                    <div class="form-group botones_casas">
-                        <input type="button" value="Buscar casa">
-                        <input type="button" value="Agregar casa">
-                        <input type="button" value="Modificar casa">
-                        <input type="button" value="Borrar casa">
-                    </div>
+                   <div class="form-group botones_casas">
+                    <input type="button" class="btn btn-light" value="Buscar casa">
+                    <input type="button" class="btn btn-light" value="Agregar casa">
+                    <input type="button" class="btn btn-light" value="Modificar casa">
+                    <input type="button" class="btn btn-light" value="Borrar casa">
+                </div>
                 </form>
 
                 <div class="tabla">
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th scope="col">Casa</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Renta/Venta</th>
-                                <th scope="col">Tipo de vivienda</th>
-                                <th scope="col">Superficie del terreno</th>
-                                <th scope="col">Caracteristicas</th>
-                            </tr>
-                        </thead>
-                        
-                    </table>
-
-                    
+                    <table class="table  table-striped">
+                        <tr>
+                            <th>Casa</th>
+                            <th>Precio</th>
+                            <th>Descripcion</th>
+                            <th>Renta/Venta</th>
+                            <th>Tipo de vivienda</th>
+                            <th>Superficie del terreno</th>
+                            <th>Caracteristicas</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>        
                 </div>
                 
             </div>
@@ -124,6 +159,7 @@
     </div>
 
     <script src="/assets/js/ubicacion_casas.js"></script>
+    <script src="/assets/js/previsualizacion_imagen.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
     <script src="./libs/bootstrap/js/bootstrap.js"></script>
 </body>
