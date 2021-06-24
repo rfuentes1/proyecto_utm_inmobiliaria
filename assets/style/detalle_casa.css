@@ -1,0 +1,48 @@
+#header{
+    background-color: rgba(194, 202, 198, 0.733);
+}
+
+#logo{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+footer{
+    background-color: #333333;
+    color: #eceff4;
+    text-align-last: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.container {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    font-size: 16px;
+    border: 0;
+    justify-content: center;
+}
+
+.header{
+    color: rgb(3, 3, 3);
+    background: rgba(0,0,0,0.5);
+}
+
+header {
+    background-image: url("../img/avi-werde-hHz4yrvxwlA-unsplash.jpg");
+    /* background-color es para el fondo  */
+
+    /* cover escala la imagen para que quepa en el contenedor */
+    background-size: cover;
+    height: 760px;
+    position: relative;
+}
+
+div.row{
+    padding-top: 30px;
+}
