@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión-Casas</title>
+    <link rel="stylesheet" href="./assets/style/gestion_casas.css">
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center pt-4 mt-4 mr-1">
+            <div class="col-md-6 gestion">
+                <form action="">
+                    <div class="form-group text-center">
+                        <h1>Gestión de casas</h1>
+                    </div>
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <label for="nombrecasa" class="form-label">Nombre de casa:</label>
+                        <input type="text" class="form-control" id="nombrecasa">
+                    </div>
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <label for="galeriafotos" class="form-label">Galeria de fotos:</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+                    <div class="form-group mb-3 row  mx-sm-4 precio">
+                        <label for="preciocasa">Precio:</label>
+                        <input type="text" class="form-control" id="preciocasa">
+                    </div>
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <div class="form-check">
+                            <label class="mb-2 row">Renta/Venta</label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="venta">
+                            <label class="form-check-label" for="venta">
+                              Venta
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="renta" checked>
+                            <label class="form-check-label" for="renta">
+                              Renta
+                            </label>
+                          </div>
+                    </div>
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <label for="descripcionpropiedad" class="form-label">Descripción propiedad:</label>
+                        <textarea class="form-control" id="descripcionpropiedad" rows="12"></textarea>
+                    </div>
+                    <div class="form group mb-3 row mx-sm-4">
+                        <label class="form-label">Tipo de vivienda:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecciona el tipo de vienda</option>
+                            <option value="1">Departamento</option>
+                            <option value="2">Casa</option>
+                            <option value="3">Terreno</option>
+                            <option value="4">Comercial</option>
+                            <option value="5">Oficina</option>
+                          </select>
+                    </div>
+                    <div class="form group mb-3 row mx-sm-4 terreno">
+                        <label for="terreno" class="form-label">Superficie del terreno en Km:</label>
+                        <input type="text" class="form-control" id="terreno">
+                    </div>
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <label class="form-label">Caracteristicas</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Eliga las caracteristicas</option>
+                            <option value="1">Terreno</option>
+                            <option value="2">Casa</option>
+                            <option value="3">Comercio</option>
+                            <option value="4">Oficina</option>
+                        </select>
+                    </div>
+
+                    <div class="panel panel-default mb-3">
+                        <div class="panel-heading">
+                            <div class="form-group">
+                                <label for="latitud">Latitud:</label>
+                                <input type="text" name="latitud" id="latitud" value="" class="text-center form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="longitud">Longitud:</label>
+                                <input type="text" name="longitud" id="longitud" value="" class="text-center form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="mb-3">
+                        <div id="mapa"></div>
+                   </div>
+
+                    <div class="form-group botones_casas">
+                        <input type="button" value="Buscar casa">
+                        <input type="button" value="Agregar casa">
+                        <input type="button" value="Modificar casa">
+                        <input type="button" value="Borrar casa">
+                    </div>
+                </form>
+
+                <div class="tabla">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th scope="col">Casa</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Renta/Venta</th>
+                                <th scope="col">Tipo de vivienda</th>
+                                <th scope="col">Superficie del terreno</th>
+                                <th scope="col">Caracteristicas</th>
+                            </tr>
+                        </thead>
+                        
+                    </table>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/ubicacion_casas.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+    <script src="./libs/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
