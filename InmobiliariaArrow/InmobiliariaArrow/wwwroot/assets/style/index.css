@@ -1,0 +1,101 @@
+body {
+    /* background-image: url('../img/avi-werde-hHz4yrvxwlA-unsplash.jpg'); */
+    /*  */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+/* header */
+header {
+    background-image: url("../img/avi-werde-hHz4yrvxwlA-unsplash.jpg");
+    /* background-color es para el fondo  */
+
+    /* cover escala la imagen para que quepa en el contenedor */
+    background-size: cover;
+    height: 760px;
+    position: relative;
+
+}
+
+#header{
+    background-color: #00000070;
+    color: #fff;
+}
+
+/* navbar */
+.navbar {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    font-size: 16px;
+    border: 0;
+    justify-content: center;
+}
+
+.card {
+    /* 1rem = 10px */
+    /* width es para lo ancho de la tarjeta y height para lo alto> */
+    width: 23rem;
+    height: 23.5rem;
+    /* El padding al 0 es para que la imágen ocupe el 100% del espacio designado en la tajeta */
+    padding: 0;
+    margin: .8rem;
+    color: black;
+    border-radius: 2%;
+}
+
+.card-text {
+    font-size: 12pt;
+    color: #748087;
+}
+
+.card-title {
+    font-size: 14pt;
+}
+
+main {
+    background-color: #ECEFF4;
+}
+
+/* Esto es para poner el título centrado y con color */
+main h2 {
+    color: #748087;
+    text-align: center;
+    margin-top: 18px;
+}
+
+#filters{
+    height: 67%;
+}
+
+#logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-success{
+    background-color:#2b7b6d;
+}
+
+.precio{
+    color: #00b1e6;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #00b1e6;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+
+footer{
+    background-color: #333333;
+    color: #eceff4;
+    text-align-last: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

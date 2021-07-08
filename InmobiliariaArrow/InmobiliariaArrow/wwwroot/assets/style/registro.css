@@ -1,0 +1,66 @@
+body {
+    background-image: url(/assets/img/../img/log-cabin-1886620_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a input.regresologin{
+    text-decoration: none;
+}
+
+.regresologin{
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: white 2px solid;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.registro{
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0,0 30px rgb(0, 0, alpha);
+    color: white;
+}
+
+div.datos_personales label{
+    font-size: 18px;
+}
+
+div.datos_usuario label{
+    font-size: 18px;
+}
+
+fieldset.scheduler-border {
+    border: 3px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+a input.registrar{
+    background: #222A3F;
+    width: 720px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 700!important;
+    color: white;
+}
+
+img {
+    width: 120px;
+    height: 150px;
+    margin-left: 20px;
+    border: white 2px solid;
+}
