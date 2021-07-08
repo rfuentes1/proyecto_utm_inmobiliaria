@@ -28,8 +28,17 @@ a input.cerrarsesion{
 .precio input{
     width: 120px;
 }
+.banios input{
+    width: 120px;
+}
+.recamaras input{
+    width: 120px;
+}
 .terreno input{
     width: 120px;
+}
+.disponible select{
+    width: 185px;
 }
 .botones_casas input{
     margin-bottom: 10px;
