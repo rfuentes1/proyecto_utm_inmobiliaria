@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./assets/style/index.css">
     <title>ARROW Bienes Raíces</title>
 </head>
+
 <body>
     <div id="hero">
         <!-- Wendy -->
@@ -17,8 +19,11 @@
             <div id="header" class="d-flex">
                 <div class="container">
                     <div class="top-head row">
-                        <div class="col-md-3 col-sm-4"><img id="logo" src="./assets/img/Logo_Arrow.png" alt="Logo_Arrow" width="150" height="150"></div>
-                        <div class="col-md-3 col-sm-4"><h2>Bienes Raíces ARROW</h2></div>
+                        <div class="col-md-3 col-sm-4"><img id="logo" src="./assets/img/Logo_Arrow.png" alt="Logo_Arrow"
+                                width="150" height="150"></div>
+                        <div class="col-md-3 text-center col-sm-4">
+                            <h2>Bienes Raíces ARROW</h2>
+                        </div>
                         <div class="col-md-3 col-sm-4"></div>
                         <div class="col-md-3 col-sm-4">Oficina (999)3105698</div>
                     </div>
@@ -48,46 +53,35 @@
                     </ul>
                 </nav>
             </div>
-            <div id="filters" class="container-fluid d-flex justify-content-start align-items-end">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light position-absolute">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="venta-renta" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Propiedades en venta
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="venta-renta">
-                                        <li><a class="dropdown-item" href="#">Propiedades en venta</a></li>
-                                        <li><a class="dropdown-item" href="#">Propiedades en renta</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="tipo-propiedad" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Tipo de propiedad
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="tipo-propiedad">
-                                        <li><a class="dropdown-item" href="#">Casa</a></li>
-                                        <li><a class="dropdown-item" href="#">Departamento</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form class="d-flex">
-                                <button class="btn btn-outline-success" type="submit">Buscar Propiedades</button>
-                            </form>
-                        </div>
+            <div class="row buscar-propiedad">
+                <div class="col-3">
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Propiedad</option>
+                            <option value="1">Propiedad en venta</option>
+                            <option value="2">Propiedad en renta</option>
+                        </select>
                     </div>
-                </nav>
+                </div>
+                <div class="col-3">
+                    <div class="form-group mb-3 row mx-sm-4">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Tipo de propiedad</option>
+                            <option value="1">Casa</option>
+                            <option value="2">Departamento</option>
+                            <option value="3">Comercio</option>
+                            <option value="4">Oficina</option>
+                            <option value="4">Terreno</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <form class="d-flex">
+                        <button class="btn btn-outline-success" type="submit">Buscar Propiedades</button>
+                    </form>
+                </div>
             </div>
         </header>
-        
         <!-- La clase container hace que el contenido no esté pegado a los lados sino centrado -->
         <!-- align-items-center hace que las tarjetas se centren -->
         <main class="container-fluid d-flex flex-column align-items-center">
@@ -172,7 +166,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Departamento en Altabrisa, Mérida</h5>
                         <p class="card-text">3 recámaras 4 baños 220 m².</p>
-                        <p href="#" class="precio">$4,000,000e</p>
+                        <p href="#" class="precio">$4,000,000</p>
                         <span class="badge bg-success">Venta</span>
                     </div>
                 </div>
@@ -205,10 +199,11 @@
 
                 <p>2021 ARROW BIENES RAICES</p>
             </div>
-            
+
         </footer>
     </div>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
