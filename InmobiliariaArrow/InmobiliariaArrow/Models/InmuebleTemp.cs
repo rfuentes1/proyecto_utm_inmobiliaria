@@ -3,7 +3,7 @@ using InmobiliariaArrow.Models;
 
 namespace InmobiliariaArrow.Models
 {
-    public class InmuebleDTO
+    public class InmuebleTemp
     {
         public int Id {get; set; }
         public string Inmueble {get; set;}

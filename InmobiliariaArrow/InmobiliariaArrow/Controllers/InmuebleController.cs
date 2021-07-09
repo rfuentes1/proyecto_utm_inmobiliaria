@@ -16,16 +16,16 @@ namespace InmobiliariaArrow.Controllers
 
         public IActionResult Index()
         {
-            var inmueble = new List<InmuebleDTO>{
-                new InmuebleDTO{Id = 1, Inmueble = "asdfs", 
+            var inmueble = new List<InmuebleTemp>{
+                new InmuebleTemp{Id = 1, Inmueble = "asdfs", 
                 Precio = 2143, Descripcion = "fdsfs", Estatus = "fsaf", Tipo_vivienda = "asff",},
-                new InmuebleDTO{Id = 2, Inmueble = "Terreno", 
+                new InmuebleTemp{Id = 2, Inmueble = "Terreno", 
                 Precio = 2134, Descripcion = "fsdfa", Estatus = "asdf", Tipo_vivienda = "fsdfa",},
-                new InmuebleDTO{Id = 3, Inmueble = "Campo", 
+                new InmuebleTemp{Id = 3, Inmueble = "Campo", 
                 Precio = 2143, Descripcion = "safsf", Estatus = "asdfsa", Tipo_vivienda = "asdf",},
-                new InmuebleDTO{Id = 4, Inmueble = "Casa", 
+                new InmuebleTemp{Id = 4, Inmueble = "Casa", 
                 Precio = 4213, Descripcion = "sfsdfsd", Estatus = "asddfsaf", Tipo_vivienda = "adfasdfd",},
-                new InmuebleDTO{Id = 5, Inmueble = "Casa", 
+                new InmuebleTemp{Id = 5, Inmueble = "Casa", 
                 Precio = 1243, Descripcion = "fasdfaf", Estatus = "fsadfasfd", Tipo_vivienda = "sdfsadf",}
             };
             ViewBag.Inmuebles = inmueble;
