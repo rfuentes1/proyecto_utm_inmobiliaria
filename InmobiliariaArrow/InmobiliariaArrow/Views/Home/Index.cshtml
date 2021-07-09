@@ -3,18 +3,24 @@
 }
 
 
-    <!-- Rocio -->
-    <!-- Con la clase trxt-align-center se pone el texto en el medio -->
-    <h2>Propiedades destacadas</h2>
-    <div class="row">
+<!-- Rocio -->
+<!-- Con la clase trxt-align-center se pone el texto en el medio -->
+<h2>Propiedades destacadas</h2>
+<div class="row">
+    @foreach (var inmueble in ViewBag.Inmuebles)
+    {
         <div class="card">
             <a href="./detalle_casa.html">
                 <img src="assets/img/at_1.jpg " class="card-img-top" alt="...">
             </a>
             <div class="card-body">
-                <h5 class="card-title">Departamento en Cholul, Mérida</h5>
-                <p class="card-text">1 recámara 1 baño 294 m².</p>
-                <p class="precio">$15,000</p>
-                <span class="badge bg-success">Renta</span>
+                <h5 class="card-title">@inmueble.Titulo</h5>
+                <p class="card-text">@inmueble.NumRecamaras, @inmueble.NumBanios, @inmueble.Superficie</p>
+                <p class="precio">$@inmueble.Precio</p>
+                <span class="badge bg-success">@inmueble.Operacion</span>
             </div>
-    </div>
+        </div>
+    }
+</div>
+
+
