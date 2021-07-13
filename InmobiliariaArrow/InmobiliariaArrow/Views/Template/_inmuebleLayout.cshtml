@@ -10,13 +10,15 @@
 </head>
 <body>
     <header class="header-inmueble">
-        <a href="#"><input type="button" class="cerrarsesion" value="Cerrar sesión"></a>
+        <a asp-controller="Login" asp-action="Index"><input type="button" class="cerrarsesion" value="Cerrar sesión"></a>
     </header>
     <main role="main" class="pb-3">
         <div class="container">
             <h1 class="fw-bold">@ViewData["Title"]</h1>
         </div>
-        @RenderBody()
+        <div class="container">
+            @RenderBody()
+        </div>
     </main>
     
     <script src="/assets/js/ubicacion_casas.js"></script>

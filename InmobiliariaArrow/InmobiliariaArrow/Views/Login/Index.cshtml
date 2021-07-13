@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Template/_loginLayout.cshtml";
+}
+<div class="form-group text-center">
+                    <h1 class="text-light">Inicio de Sesión</h1>
+                    <h2 class="text-ligth">Administrador de casas</h2>
+                  </div>
+                  <div class="form-group mx-sm-4">
+                    <label for="usuario" class="form-label" style="font-size: 20px;">Usuario:</label>
+                    <input type="text" class="form-control" id="usuario">
+                  </div>
+                  <div class="form-group mx-sm-4">
+                    <label for="password" class="form-label" style="font-size: 20px;">Contraseña:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                  <div class="form-group mx-sm-4">
+                    <br>
+                    <a asp-controller="Login" asp-action="#">Registrate si no tienes cuenta</a>
+                  </div>
+                  <div class="form-group row g-3 mt-1">
+                    <a asp-controller="Inmueble" asp-action="Index"><input type="button" class="enviar" value="Enviar"></a>
+                    
+</div>
