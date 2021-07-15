@@ -10,7 +10,7 @@
     @foreach (var inmueble in ViewBag.Inmuebles)
     {
         <div class="card">
-            <a href="./detalle_casa.html">
+            <a asp-controller="DetalleCasa" asp-action="Index">
                 <img src="assets/img/at_1.jpg " class="card-img-top" alt="...">
             </a>
             <div class="card-body">

@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"] = "Gestión-inmuebles";
-    Layout = "~/Views/Template/_inmuebleLayout.cshtml";
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutSimple.cshtml";
 }
 <div class="d-flex justify-content-g-end" style="margin-left: 975px;">
     <a class="btn btn-success mb-4" asp-controller="Inmueble" asp-action="Add">Nuevo inmueble</a>
@@ -28,7 +28,7 @@
                 <td>@item.Estatus</td>
                 <td>@item.Tipo_vivienda</td>
             </tr>
-        }   
+        }
     </tbody>
 </table>
 

@@ -1,4 +1,12 @@
-#header{
+
+
+body {
+    background-image: url(/assets/img/fondo_casa_detalle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#header {
     background-color: rgba(194, 202, 198, 0.733);
 }
 
@@ -34,9 +42,7 @@ footer{
 }
 
 header {
-    background-image: url("../img/avi-werde-hHz4yrvxwlA-unsplash.jpg");
     /* background-color es para el fondo  */
-
     /* cover escala la imagen para que quepa en el contenedor */
     background-size: cover;
     height: 760px;

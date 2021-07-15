@@ -30,11 +30,13 @@ namespace InmobiliariaArrow.Controllers
             };
             ViewBag.Inmuebles = inmueble;
             ViewData["inmueble"] = inmueble;
+            ViewData["Estilo"] = "inmueble.css";
             return View();
         }
 
         public IActionResult Add()
         {
+            ViewData["Estilo"] = "gestion_casas.css";
             return View();
         }
     }
