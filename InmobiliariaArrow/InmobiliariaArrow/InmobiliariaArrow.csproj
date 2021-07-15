@@ -16,9 +16,17 @@
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Data\" />
+    <None Remove="Views\Registro\" />
+    <None Remove="Views\Conocenos\" />
+    <None Remove="Views\Contactanos\" />
+    <None Remove="Views\DetalleCasa\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Registro\" />
+    <Folder Include="Views\Conocenos\" />
+    <Folder Include="Views\Contactanos\" />
+    <Folder Include="Views\DetalleCasa\" />
   </ItemGroup>
 </Project>

@@ -8,22 +8,17 @@
     <!-- grid.min.css hace que se pueda usar el gris -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="~/assets/style/index.css">
+    <link rel="stylesheet" href="~/assets/style/@ViewData["Estilo"]">
     <title>@ViewData["Title"]</title>
 </head>
-<body>
-    <header>
 
-        <!-- El d-flex es como la regla display:flex para poder utilizar flexbox -->
+<body>
+    <div id="hero" class="container">
         <div id="header" class="d-flex">
             <div class="container">
                 <div class="top-head row">
-                    <div class="col-md-3 col-sm-4">
-                        <img id="logo" src="./assets/img/Logo_Arrow.png" alt="Logo_Arrow"
-                             width="150" height="150">
-                    </div>
-                    <div class="col-md-3 text-center col-sm-4">
-                        <h2>Bienes Raíces ARROW</h2>
-                    </div>
+                    <div class="col-md-3 col-sm-4"><img id="logo" src="/assets/img/Logo_Arrow.png" alt="Logo_Arrow" width="150" height="150"></div>
+                    <div class="col-md-3 col-sm-4"><h2>Bienes Raíces ARROW</h2></div>
                     <div class="col-md-3 col-sm-4"></div>
                     <div class="col-md-3 col-sm-4">Oficina (999)3105698</div>
                 </div>
@@ -53,8 +48,7 @@
                 </ul>
             </nav>
         </div>
-    </header>
-
+    </div>
     <div class="container">
         <main class="container-fluid d-flex flex-column align-items-center">
             @RenderBody()
@@ -69,6 +63,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

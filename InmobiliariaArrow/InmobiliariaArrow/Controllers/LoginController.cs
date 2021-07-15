@@ -15,6 +15,7 @@ namespace InmobiliariaArrow.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Estilo"] = "login.css";
             return View();
         }
     }
