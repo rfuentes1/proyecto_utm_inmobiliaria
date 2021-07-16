@@ -57,6 +57,7 @@ header {
 
 main {
     background-color: #ECEFF4;
+    margin-top: 25px;
 }
 
 /* Esto es para poner el título centrado y con color */
@@ -94,6 +95,7 @@ main h2 {
 
 footer{
     background-color: #333333;
+    margin-top: 25px;
     color: #eceff4;
     text-align-last: center;
     padding-top: 15px;
