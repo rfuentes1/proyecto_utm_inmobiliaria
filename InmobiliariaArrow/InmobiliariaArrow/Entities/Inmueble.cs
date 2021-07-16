@@ -16,7 +16,8 @@ namespace InmobiliariaArrow.Entities
         public Boolean EstaDisponible { get; set; }
         public string Operacion { get; set; }
         [Column("id_tipo_propiedad")]
-        public int IdTipoPropiedad { get; set; }
+        public int TipoPropiedadId { get; set; }
+        public TipoPropiedad TipoPropiedad { get; set; }
         [Column("num_banios")]
         public string NumBanios { get; set; }
         [Column("num_recamaras")]
