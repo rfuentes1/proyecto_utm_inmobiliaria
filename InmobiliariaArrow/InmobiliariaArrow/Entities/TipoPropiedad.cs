@@ -8,7 +8,7 @@ namespace InmobiliariaArrow.Entities
     public class TipoPropiedad
     {
         [Key]
-        [Colum("id_tipo_propiedad")]
+        [Column("id_tipo_propiedad")]
         public int IdTipoPropiedad { get; set; }
         public string Nombre { get; set; }
     }
