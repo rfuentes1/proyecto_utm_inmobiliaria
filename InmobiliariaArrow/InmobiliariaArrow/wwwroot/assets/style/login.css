@@ -5,12 +5,18 @@ body {
     background-attachment: fixed;
 }
 
-.formulario{
+main {
     background: rgba(0,0,0,0.5);
-    padding: 20px;
     border-radius: 10px;
+}
+.formulario{
+    padding: 20px;
     box-shadow: 0,0 30px rgb(0, 0, alpha);
     color: white;
+}
+
+.formulario h2 {
+    color:white;
 }
 
 .enviar{

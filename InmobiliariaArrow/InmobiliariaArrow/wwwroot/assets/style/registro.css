@@ -5,24 +5,13 @@ body {
     background-attachment: fixed;
 }
 
-a input.regresologin{
-    text-decoration: none;
-}
-
-.regresologin{
-    width: 100px;
-    height: 50px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border: white 2px solid;
+main {
+    background: rgba(0,0,0,0.5);
     border-radius: 10px;
-    font-size: 16px;
 }
 
 .registro{
-    background: rgba(0,0,0,0.5);
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0,0 30px rgb(0, 0, alpha);
     color: white;
 }
@@ -51,14 +40,14 @@ legend.scheduler-border {
 
 a input.registrar{
     background: #222A3F;
-    width: 720px;
+    width: 690px;
     height: 45px;
     font-size: 18px;
     font-weight: 700!important;
     color: white;
 }
 
-img {
+div.fotografia img {
     width: 120px;
     height: 150px;
     margin-left: 20px;

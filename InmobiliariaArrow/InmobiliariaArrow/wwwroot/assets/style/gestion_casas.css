@@ -4,24 +4,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-a input.cerrarsesion{
-    text-decoration: none;
-}
-
-.cerrarsesion{
-    width: 125px;
-    height: 50px;
-    margin-top: 20px;
-    margin-left: 20px;
-    border: white 2px solid;
+main {
+    background: rgba(0,0,0,0.5);
     border-radius: 10px;
-    font-size: 16px;
 }
-
 .gestion{
-    background: rgb(129, 129, 129);
+    width: 750px;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0,0 30px rgb(0, 0, alpha);
     color: white;
 }
@@ -38,10 +27,10 @@ a input.cerrarsesion{
 
 #mapa{
     height: 400px;
-    width: 735px;
+    width: 710px;
 }
 
-img {
+div.galeria img {
     width: 120px;
     height: 150px;
 }
