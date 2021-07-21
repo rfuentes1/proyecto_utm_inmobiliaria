@@ -1,8 +1,6 @@
-using System;
-using InmobiliariaArrow.Models;
-
 namespace InmobiliariaArrow.Models
 {
+    //TODO se tiene que eliminar y cambiar por InmuebleDto
     public class InmuebleTemp
     {
         public int Id {get; set; }

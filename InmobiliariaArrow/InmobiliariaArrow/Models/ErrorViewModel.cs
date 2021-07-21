@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace InmobiliariaArrow.Models
+﻿namespace InmobiliariaArrow.Models
 {
     public class ErrorViewModel
     {

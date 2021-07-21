@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using InmobiliariaArrow.Models;
 using InmobiliariaArrow.Data;
-//using InmobiliariaArrow.Models;
+using InmobiliariaArrow.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InmobiliariaArrow.Controllers
 {

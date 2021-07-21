@@ -1,5 +1,4 @@
-﻿using System;
-using InmobiliariaArrow.Entities;
+﻿using InmobiliariaArrow.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace InmobiliariaArrow.Data
