@@ -11,6 +11,7 @@ namespace InmobiliariaArrow.Entities
         public int IdInmueble { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public Decimal Precio { get; set; }
         [Column("esta_disponible")]
         public Boolean EstaDisponible { get; set; }
