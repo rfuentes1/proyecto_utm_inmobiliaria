@@ -27,8 +27,7 @@
             </div>
             <div class="form-group mb-3 row mx-sm-4 disponible">
                 <label class="form-label">Operación:</label>
-                <select name="" id="" class="form-select" aria-label="Selecciona si la propiedad esta en venta o en renta" asp-for="Operacion">
-                    <option selected>Elija la operación:</option>
+                <select class="form-select" aria-label="Selecciona si la propiedad esta en venta o en renta" asp-for="Operacion">
                     <option value="Venta">Venta</option>
                     <option value="Renta">Renta</option>
                 </select>
@@ -37,16 +36,15 @@
                 <label for="num_banios" class="form-label">Escribe el número de baños:</label>
                 <input type="text" class="form-control" id="num_banios" asp-for="NumBanios">
             </div>
-            <div class="form-group mb-3 row mx-sm-4 recamaras">
+            <div class="form-group mb-3 row mx-sm-4 ">
                 <label for="num_recamaras" class="form-label">Escribe el número de recamaras:</label>
                 <input type="text" class="form-control" id="num_recamaras" asp-for="NumRecamaras">
             </div>
-            <div class="form-group mb-3 row mx-sm-4 disponible">
+            <div class="form-group mb-3 row mx-sm-4 ">
                 <label class="form-label">Se encuentra disponible:</label>
-                <select name="" id="" class="form-select" aria-label="Selecciona si esta disponible o no esta disponible" asp-for="EstaDisponible">
-                    <option selected>Elija la opcion:</option>
-                    <option value="1">Si</option>
-                    <option value="2">No</option>
+                <select class="form-select" aria-label="Selecciona si esta disponible o no esta disponible" asp-for="EstaDisponible">
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
                 </select>
             </div>
             <div class="form-group mb-3 row mx-sm-4">
@@ -60,7 +58,7 @@
             <div class="form-group mb-3 row mx-sm-4">
                 <label class="form-label">Tipo de inmueble</label>
                 <select class="form-select" aria-label="Selecciona el tipo de propiedad" asp-for="IdTipoPropiedad">
-                    <option selected>Elija las caracteristicas</option>
+                    <option selected>Elija las caracteristicas:</option>
                     @foreach (var tipoPropiedad in ViewBag.TipoPropiedades)
                     {
                         <option value="@tipoPropiedad.IdTipoPropiedad">@tipoPropiedad.Nombre</option>
