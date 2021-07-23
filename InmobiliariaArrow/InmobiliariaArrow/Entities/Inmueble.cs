@@ -8,6 +8,7 @@ namespace InmobiliariaArrow.Entities
     public class Inmueble
     {
         [Key]
+        [Column("id_inmueble")]
         public int IdInmueble { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
@@ -24,7 +25,6 @@ namespace InmobiliariaArrow.Entities
         [Column("num_recamaras")]
         public string NumRecamaras { get; set; }
         public string Superficie { get; set; }
-
     }
    
 }

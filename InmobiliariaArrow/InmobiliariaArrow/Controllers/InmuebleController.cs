@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using InmobiliariaArrow.Data;
+using InmobiliariaArrow.Entities;
 using InmobiliariaArrow.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,7 +38,8 @@ namespace InmobiliariaArrow.Controllers
 
         public IActionResult Add()
         {
-            var tipoPropiedades = _dbContext.TipoPropiedad.Select(tp =>
+            var tipoPropiedades = _dbContext.TipoPropiedad
+                .Select(tp =>
                 new TipoPropiedadDto
                 {
                     IdTipoPropiedad = tp.IdTipoPropiedad,
@@ -46,6 +48,27 @@ namespace InmobiliariaArrow.Controllers
             ViewData["Estilo"] = "gestion_casas.css";
             ViewBag.TipoPropiedades = tipoPropiedades;
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Add(InmuebleDto inmuebleDto)
+        {
+            var inmueble =
+                new Inmueble
+                {
+                    Titulo = inmuebleDto.Titulo,
+                    Descripcion = inmuebleDto.Descripcion,
+                    Precio = inmuebleDto.Precio,
+                    EstaDisponible = inmuebleDto.EstaDisponible,
+                    Operacion = inmuebleDto.Operacion,
+                    TipoPropiedadId = inmuebleDto.IdTipoPropiedad,
+                    NumBanios = inmuebleDto.NumBanios,
+                    NumRecamaras = inmuebleDto.NumRecamaras,
+                    Superficie = inmuebleDto.Superficie
+                };
+            _dbContext.Inmuebles.Add(inmueble);
+            _dbContext.SaveChanges();
+            return  RedirectToAction("Index");
         }
     }
 }

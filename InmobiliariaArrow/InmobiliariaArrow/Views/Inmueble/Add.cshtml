@@ -1,3 +1,4 @@
+@model InmobiliariaArrow.Models.InmuebleDto
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutSimple.cshtml";
@@ -5,13 +6,13 @@
 
 <div class="row justify-content-center pt-4 mt-4 mr-1">
     <div class="col-md-8 gestion">
-        <form action="">
+        <form asp-action="Add" method="post">
             <div class="form-group text-center">
                 <h1>Gestión de casas</h1>
             </div>
             <div class="form-group mb-3 row mx-sm-4">
                 <label for="nombrecasa" class="form-label">Nombre de casa:</label>
-                <input type="text" class="form-control" id="nombrecasa">
+                <input type="text" class="form-control" id="nombrecasa" asp-for="Titulo">
             </div>
             <div class="form-group mb-3 row mx-sm-4 galeria">
                 <label for="subir_img" class="form-label">Galeria de fotos:</label>
@@ -22,34 +23,27 @@
             </div>
             <div class="form-group mb-3 row  mx-sm-4 precio">
                 <label for="preciocasa">Precio:</label>
-                <input type="text" class="form-control" id="preciocasa">
+                <input type="text" class="form-control" id="preciocasa" asp-for="Precio">
             </div>
-            <div class="form-group mb-3 row mx-sm-4">
-                <div class="form-check">
-                    <label class="mb-2 row">Renta/Venta</label>
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="venta">
-                    <label class="form-check-label" for="venta">
-                        Venta
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="renta" checked>
-                    <label class="form-check-label" for="renta">
-                        Renta
-                    </label>
-                </div>
+            <div class="form-group mb-3 row mx-sm-4 disponible">
+                <label class="form-label">Operación:</label>
+                <select name="" id="" class="form-select" aria-label="Selecciona si la propiedad esta en venta o en renta" asp-for="Operacion">
+                    <option selected>Elija la operación:</option>
+                    <option value="Venta">Venta</option>
+                    <option value="Renta">Renta</option>
+                </select>
             </div>
             <div class="form-group mb-3 row mx-sm-4 banios">
                 <label for="num_banios" class="form-label">Escribe el número de baños:</label>
-                <input type="text" class="form-control" id="num_banios">
+                <input type="text" class="form-control" id="num_banios" asp-for="NumBanios">
             </div>
             <div class="form-group mb-3 row mx-sm-4 recamaras">
                 <label for="num_recamaras" class="form-label">Escribe el número de recamaras:</label>
-                <input type="text" class="form-control" id="num_recamaras">
+                <input type="text" class="form-control" id="num_recamaras" asp-for="NumRecamaras">
             </div>
             <div class="form-group mb-3 row mx-sm-4 disponible">
                 <label class="form-label">Se encuentra disponible:</label>
-                <select name="" id="" class="form-select" aria-label="Default select example">
+                <select name="" id="" class="form-select" aria-label="Selecciona si esta disponible o no esta disponible" asp-for="EstaDisponible">
                     <option selected>Elija la opcion:</option>
                     <option value="1">Si</option>
                     <option value="2">No</option>
@@ -57,15 +51,15 @@
             </div>
             <div class="form-group mb-3 row mx-sm-4">
                 <label for="descripcionpropiedad" class="form-label">Descripción propiedad:</label>
-                <textarea class="form-control" id="descripcionpropiedad" rows="12"></textarea>
+                <textarea class="form-control" id="descripcionpropiedad" rows="12" asp-for="Descripcion"></textarea>
             </div>
             <div class="form group mb-3 row mx-sm-4 terreno">
                 <label for="terreno" class="form-label">Superficie del terreno en metros cuadrados:</label>
-                <input type="text" class="form-control" id="terreno">
+                <input type="text" class="form-control" id="terreno" asp-for="Superficie">
             </div>
             <div class="form-group mb-3 row mx-sm-4">
                 <label class="form-label">Tipo de inmueble</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Selecciona el tipo de propiedad" asp-for="IdTipoPropiedad">
                     <option selected>Elija las caracteristicas</option>
                     @foreach (var tipoPropiedad in ViewBag.TipoPropiedades)
                     {
@@ -88,7 +82,7 @@
             </div>
 
             <div class="form-group botones_casas">
-                <input type="button" class="btn btn-light" value="Agregar inmueble">
+                <input type="submit" class="btn btn-light" value="Agregar inmueble">
                 <input type="button" class="btn btn-light" value="Cancelar">
             </div>
         </form>
