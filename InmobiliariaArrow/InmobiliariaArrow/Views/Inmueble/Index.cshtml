@@ -9,26 +9,24 @@
 <table class="table table-dark">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Inmueble</th>
+            <th scope="col">Titulo</th>
             <th scope="col">Precio</th>
             <th scope="col">Descripcion</th>
-            <th scope="col">Renta/Venta</th>
-            <th scope="col">Tipo vivienda</th>
+            <th scope="col">Operacion</th>
+            <th scope="col">Superficie</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in @ViewBag.Inmuebles)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Inmueble</td>
-                <td>@item.Precio</td>
-                <td>@item.Descripcion</td>
-                <td>@item.Estatus</td>
-                <td>@item.Tipo_vivienda</td>
-            </tr>
-        }
+    @foreach (var inmueble in ViewBag.Inmuebles)
+    {
+        <tr>
+            <td>@inmueble.Titulo</td>
+            <td>@inmueble.Precio</td>
+            <td>@inmueble.Descripcion</td>
+            <td>@inmueble.Operacion</td>
+            <td>@inmueble.Superficie</td>
+        </tr>
+    }
     </tbody>
 </table>
 
