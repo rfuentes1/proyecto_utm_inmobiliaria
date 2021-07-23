@@ -21,13 +21,16 @@ main {
     width: 120px;
 }
 .botones_casas input{
-    margin-bottom: 10px;
-    margin-left: 65px;
+    width: 170px;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-left: 125px;
 }
 
 #mapa{
     height: 400px;
     width: 710px;
+    margin-bottom: 25px;
 }
 
 div.galeria img {
