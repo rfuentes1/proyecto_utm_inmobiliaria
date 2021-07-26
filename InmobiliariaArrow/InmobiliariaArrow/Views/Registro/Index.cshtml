@@ -1,11 +1,12 @@
-﻿@{
-    ViewBag.Title = "Login";
+﻿@model InmobiliariaArrow.Models.AdministradorDto
+@{
+    ViewBag.Title = "Registro Administrador";
     Layout = "~/Views/Shared/_LayoutSimple.cshtml";
 }
 <div class="container">
     <div class="row justify-content-center pt-3 mt-3 mr-1">
         <div class="col-md-8 registro">
-            <form action="">
+            <form asp-action="Add" method="post">
                 <div class="form-group text-center row mb-4">
                     <h1>Crea tu Perfil de Administrador</h1>
                 </div>
@@ -17,37 +18,37 @@
                         <div class="row mb-3">
                             <label for="nombre_admin" class="col-sm-2 col-form-label">Nombres:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="nombre_admin" placeholder="Escriba su nombre completo">
+                                <input type="text" class="form-control" id="nombre_admin" asp-for="Nombres" placeholder="Escriba su nombre completo">
                             </div>
                             <label for="apellidos_admin" class="col-sm-2 col-form-label">Apellidos:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="apellidos_admin" placeholder="Escriba sus apellidos">
+                                <input type="text" class="form-control" id="apellidos_admin" asp-for="Apellidos" laceholder="Escriba sus apellidos">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="correo_admin" class="col-sm-2 col-form-label">Correo:</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="correo_admin" placeholder="Escriba su correo">
+                                <input type="email" class="form-control" id="correo_admin" asp-for="Correo" placeholder="Escriba su correo">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="telefono" class="col-sm-2 col-form-label">Teléfono:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="telefono" placeholder="Escribe su teléfono móvil">
+                                <input type="text" class="form-control" id="telefono" asp-for="Telefono" placeholder="Escribe su teléfono móvil">
                             </div>
                             <label for="pais" class="col-sm-2 col-form-label">País</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="pais" placeholder="Escribe tu país">
+                                <input type="text" class="form-control" id="pais" asp-for="Pais" placeholder="Escribe tu país">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="ciudad" placeholder="Escribe tu ciudad">
+                                <input type="text" class="form-control" id="ciudad" asp-for="Ciudad" placeholder="Escribe tu ciudad">
                             </div>
                             <label for="estado" class="col-sm-2 col-form-label">Estado:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="estado" placeholder="Escribe tu estado">
+                                <input type="text" class="form-control" id="estado" asp-for="Estado" placeholder="Escribe tu estado">
                             </div>
                         </div>
                         <div class="form-group text-center row mb-3">
@@ -68,18 +69,18 @@
                         <div class="row mb-1">
                             <label for="usuario_admin" class="col-sm-2 col-form-label">Usuario:</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="usuario_admin" placeholder="Escriba un usuario">
+                                <input type="text" class="form-control" id="usuario_admin" asp-for="Usuario" placeholder="Escriba un usuario">
                             </div>
                             <label for="contraseña_admin" class="col-sm-2 col-form-label">Contraseña:</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" id="contraseña_admin" placeholder="Escriba una contraseña">
+                                <input type="password" class="form-control" id="contraseña_admin" asp-for="Password" placeholder="Escriba una contraseña">
                             </div>
 
                         </div>
                     </fieldset>
                 </div>
                 <div class="form-group row g-3 mt-1">
-                    <a asp-controller="Login" asp-action="Index"><input type="button" class="registrar" value="Registrar"></a>
+                    <input type="submit" class="registrar" value="Registrar">
                 </div>
             </form>
         </div>

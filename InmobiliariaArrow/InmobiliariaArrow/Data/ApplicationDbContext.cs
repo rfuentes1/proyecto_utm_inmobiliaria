@@ -14,6 +14,7 @@ namespace InmobiliariaArrow.Data
         //una propiedad aquí de ese tipo
         public virtual DbSet<Inmueble> Inmuebles { get; set; }
         public virtual DbSet<TipoPropiedad> TipoPropiedad { get; set; }
+        public virtual DbSet<Administrador> Administradores { get; set; }
 
     }
 }
