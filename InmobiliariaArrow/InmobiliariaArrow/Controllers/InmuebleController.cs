@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using InmobiliariaArrow.Data;
 using InmobiliariaArrow.Entities;
 using InmobiliariaArrow.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 
 namespace InmobiliariaArrow.Controllers
 {
@@ -45,9 +49,11 @@ namespace InmobiliariaArrow.Controllers
             ViewBag.TipoPropiedades = tipoPropiedades;
             return View();
         }
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(InmuebleDto inmuebleDto)
+        public IActionResult Add(InmuebleDto inmuebleDto, List<IFormFile> fotos)
         {
             var inmueble =
                 new Inmueble
@@ -62,9 +68,34 @@ namespace InmobiliariaArrow.Controllers
                     NumRecamaras = inmuebleDto.NumRecamaras,
                     Superficie = inmuebleDto.Superficie
                 };
-            _dbContext.Inmuebles.Add(inmueble);
+            var inmuebleGuardado = _dbContext.Inmuebles.Add(inmueble).Entity;
             _dbContext.SaveChanges();
+            var idInmueble = inmuebleGuardado.IdInmueble.ToString();
+            GuardarFotosEnCarpeta(fotos, idInmueble);
             return  RedirectToAction("Index");
+        }
+
+        private static void GuardarFotosEnCarpeta(List<IFormFile> fotos, string idInmueble)
+        {
+            if (fotos.Count < 1)
+                return;
+            var ruta = $@"{Directory.GetCurrentDirectory()}/wwwroot/Inmueble/fotos/{idInmueble}";
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+
+            foreach (var file in fotos)
+            {
+                var fotoId = Convert.ToString(Guid.NewGuid());
+                var rutaFoto =
+                    new PhysicalFileProvider(ruta).Root + $"{fotoId}.jpg";
+                using (FileStream fs = System.IO.File.Create(rutaFoto))
+                {
+                    file.CopyTo(fs);
+                    fs.Flush();
+                }
+            }
         }
     }
 }

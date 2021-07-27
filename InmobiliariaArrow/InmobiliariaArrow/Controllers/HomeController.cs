@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using InmobiliariaArrow.Data;
 using InmobiliariaArrow.Models;
@@ -30,7 +31,8 @@ namespace InmobiliariaArrow.Controllers
                     Operacion = inmueble.Operacion,
                     NumBanios = inmueble.NumBanios,
                     NumRecamaras = inmueble.NumRecamaras,
-                    Superficie = inmueble.Superficie
+                    Superficie = inmueble.Superficie,
+                    VistaPreviaFoto = obtenerVistaPrevia(inmueble.IdInmueble)
                 });
             // 2. Meter esa lista de inmuebles al viewbag para que se puedan acceder en el view desde razor
             ViewBag.Inmuebles = inmueblesDto;
@@ -41,6 +43,17 @@ namespace InmobiliariaArrow.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private static string obtenerVistaPrevia(int id)
+        {
+            var ruta = $@"{Directory.GetCurrentDirectory()}/wwwroot/Inmueble/fotos/{id.ToString()}/";
+            var di = new DirectoryInfo(ruta);
+            string firstFileName =
+                di.GetFiles("*.jpg")
+                    .Select(fi => fi.Name)
+                    .FirstOrDefault();
+            return $@"Inmueble/fotos/{id.ToString()}/{firstFileName}";
         }
     }
 }
