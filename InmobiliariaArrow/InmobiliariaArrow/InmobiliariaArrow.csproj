@@ -28,5 +28,6 @@
     <Folder Include="Views\Conocenos\" />
     <Folder Include="Views\Contactanos\" />
     <Folder Include="Views\DetalleCasa\" />
+    <Folder Include="wwwroot\Inmueble" />
   </ItemGroup>
 </Project>

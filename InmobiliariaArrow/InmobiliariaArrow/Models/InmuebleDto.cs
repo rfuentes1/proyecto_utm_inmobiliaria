@@ -12,6 +12,8 @@ namespace InmobiliariaArrow.Models
         public string NumBanios { get; set; }
         public string NumRecamaras { get; set; }
         public string Superficie { get; set; }
+        
+        public string VistaPreviaFoto { get; set; }
     }
 
 }
