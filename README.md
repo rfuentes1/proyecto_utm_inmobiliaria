@@ -18,5 +18,4 @@ Con la descripción anterior y teniendo en consideración estos eventos económi
 ## Integrantes
 ---
 1. Adrián Méndez
-2. Wendy Morales
-3. Rocío Fuentes
+2. Rocío Fuentes
