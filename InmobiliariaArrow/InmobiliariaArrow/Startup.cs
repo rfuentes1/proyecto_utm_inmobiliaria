@@ -21,7 +21,7 @@ namespace InmobiliariaArrow
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("azuredb")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("Lapmsi")));
 
             services.AddControllersWithViews();
         }
