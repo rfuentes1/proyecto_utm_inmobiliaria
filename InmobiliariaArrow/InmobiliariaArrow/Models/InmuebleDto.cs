@@ -3,6 +3,7 @@ namespace InmobiliariaArrow.Models
 {
     public class InmuebleDto
     {
+        public int Id { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public Decimal Precio { get; set; }

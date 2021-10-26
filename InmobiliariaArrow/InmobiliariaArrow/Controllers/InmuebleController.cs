@@ -14,6 +14,7 @@ namespace InmobiliariaArrow.Controllers
     public class InmuebleController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        private static readonly string CarpetaFotos = $"{Directory.GetCurrentDirectory()}/wwwroot/Inmueble/fotos/";
 
         public InmuebleController(ApplicationDbContext dbContext)
         {
@@ -25,6 +26,7 @@ namespace InmobiliariaArrow.Controllers
             var inmueblesDTO = _dbContext.Inmuebles
             .Select(inmueble => new InmuebleDto
             {
+                Id = inmueble.IdInmueble,
                 Titulo = inmueble.Titulo,
                 Precio = inmueble.Precio,
                 Operacion = inmueble.Operacion, 
@@ -75,11 +77,21 @@ namespace InmobiliariaArrow.Controllers
             return  RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult Delete(int inmuebleId)
+        {
+            var inmuebleABorrar = _dbContext.Inmuebles.Find(inmuebleId);
+            _dbContext.Inmuebles.Remove(inmuebleABorrar);
+            _dbContext.SaveChanges();
+            Directory.Delete($"{CarpetaFotos}/{inmuebleId}", true);
+            return RedirectToAction("Index");
+        }
+        
         private static void GuardarFotosEnCarpeta(List<IFormFile> fotos, string idInmueble)
         {
             if (fotos.Count < 1)
                 return;
-            var ruta = $@"{Directory.GetCurrentDirectory()}/wwwroot/Inmueble/fotos/{idInmueble}";
+            var ruta = $@"{CarpetaFotos}/{idInmueble}";
             if (!Directory.Exists(ruta))
             {
                 Directory.CreateDirectory(ruta);
@@ -90,11 +102,9 @@ namespace InmobiliariaArrow.Controllers
                 var fotoId = Convert.ToString(Guid.NewGuid());
                 var rutaFoto =
                     new PhysicalFileProvider(ruta).Root + $"{fotoId}.jpg";
-                using (FileStream fs = System.IO.File.Create(rutaFoto))
-                {
-                    file.CopyTo(fs);
-                    fs.Flush();
-                }
+                using var fs = System.IO.File.Create(rutaFoto);
+                file.CopyTo(fs);
+                fs.Flush();
             }
         }
     }
