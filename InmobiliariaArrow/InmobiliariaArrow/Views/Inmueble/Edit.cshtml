@@ -1,58 +1,58 @@
 ﻿@model InmobiliariaArrow.Models.InmuebleDto
 @{
-    ViewBag.Title = "Editar inmueble";
+    ViewBag.Title = "Editar Inmueble";
     Layout = "~/Views/Shared/_LayoutSimple.cshtml";
 }
 
 <div class="row justify-content-center pt-4 mt-4 mr-1">
     <div class="col-md-8 gestion">
-        <form asp-action="Edit" enctype="multipart/form-data" method="post">
+        <form asp-action="Edit" enctype="multipart/form-data" method="post" onsubmit="return estaLleno()" id="formulario">
             <div class="form-group text-center">
                 <h1>Actualizar Inmueble</h1>
             </div>
             <div class="form-group mb-3 row mx-sm-4">
-                <label for="nombrecasa" class="form-label">Nombre de casa:</label>
+                <label for="nombrecasa" class="form-label">Nombre de casa:*</label>
                 <input type="text" class="form-control" value="@ViewBag.Original.Titulo"  id="nombrecasa" asp-for="Titulo">
             </div>
             <div class="form-group mb-3 row mx-sm-4 galeria">
-                <label for="fotos" class="form-label">Galeria de fotos:</label>
+                <label for="fotos" class="form-label">Galeria de fotos:*</label>
                 <input class="form-control mb-3" name="fotos"  id="subir_img" type="file" accept="image/*" multiple="multiple">
                 <div id="vista_previa"></div>
             </div>
             <div class="form-group mb-3 row  mx-sm-4 precio">
-                <label for="preciocasa">Precio:</label>
+                <label for="preciocasa">Precio:*</label>
                 <input type="text" class="form-control" id="preciocasa" value="@ViewBag.Original.Precio" asp-for="Precio">
             </div>
             <div class="form-group mb-3 row mx-sm-4 disponible">
-                <label class="form-label">Operación:</label>
+                <label class="form-label">Operación:*</label>
                 <select class="form-select" aria-label="Selecciona si la propiedad esta en venta o en renta" asp-for="Operacion">
                     <option value="Venta" selected='@(ViewBag.Original.Operacion == "Venta")'>Venta</option>
                     <option value="Renta" selected='@(ViewBag.Original.Operacion == "Renta")'>Renta</option>
                 </select>
             </div>
             <div class="form-group mb-3 row mx-sm-4 banios">
-                <label for="num_banios" class="form-label">Escribe el número de baños:</label>
+                <label for="num_banios" class="form-label">Escribe el número de baños:*</label>
                 <input type="text" class="form-control" id="num_banios" value="@ViewBag.Original.NumBanios" asp-for="NumBanios">
             </div>
             <div class="form-group mb-3 row mx-sm-4 ">
-                <label for="num_recamaras" class="form-label">Escribe el número de recamaras:</label>
+                <label for="num_recamaras" class="form-label">Escribe el número de recamaras:*</label>
                 <input type="text" class="form-control" id="num_recamaras" value="@ViewBag.Original.NumRecamaras" asp-for="NumRecamaras">
             </div>
             <div class="form-group mb-3 row mx-sm-4 ">
-                <label class="form-label">Se encuentra disponible:</label>
+                <label class="form-label">Se encuentra disponible:*</label>
                 <select class="form-select" aria-label="Selecciona si esta disponible o no esta disponible" asp-for="EstaDisponible">
                     <option value="true" selected="@(ViewBag.Original.EstaDisponible == true)" >Sí</option>
                     <option value="false" selected="@(ViewBag.Original.EstaDisponible == false)">No</option>
                 </select>
             </div>
             <div class="form-group mb-3 row mx-sm-4">
-                <label for="descripcionpropiedad" class="form-label">Descripción propiedad:</label>
+                <label for="descripcionpropiedad" class="form-label">Descripción propiedad:*</label>
                 @{ Model.Descripcion = ViewBag.Original.Descripcion;}
                 <textarea class="form-control" id="descripcionpropiedad" rows="12" asp-for="Descripcion">
                 </textarea>
             </div>
             <div class="form group mb-3 row mx-sm-4 terreno">
-                <label for="terreno" class="form-label">Superficie del terreno en metros cuadrados:</label>
+                <label for="terreno" class="form-label">Superficie del terreno en metros cuadrados:*</label>
                 <input type="text" class="form-control" id="terreno" value="@ViewBag.Original.Superficie" asp-for="Superficie">
             </div>
             <div class="form-group mb-3 row mx-sm-4">
@@ -70,7 +70,7 @@
             <div class="panel panel-default mb-3">
                 <div class="panel-heading">
                     <div class="form-group">
-                        <label for="direccion">Dirección:</label>
+                        <label for="direccion">Dirección:*</label>
                         <input type="text" name="direccion" id="direccion" 
                                class="text-center form-control"
                                value="@ViewBag.Original.Direccion"
@@ -95,4 +95,5 @@
 
 <script src="/assets/js/ubicacion_casas.js"></script>
 <script src="/assets/js/previsualizacion_imagen.js"></script>
+<script src="/assets/js/validacion.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
