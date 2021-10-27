@@ -68,7 +68,7 @@ namespace InmobiliariaArrow.Controllers
                     NumBanios = inmueble.NumBanios,
                     NumRecamaras = inmueble.NumRecamaras,
                     Superficie = inmueble.Superficie,
-                    VistaPreviaFoto = null
+                    Direccion = inmueble.Direccion
                 };
              ViewBag.Original = inmuebleOrigen;
              var tipoPropiedades = _dbContext.TipoPropiedad
@@ -98,7 +98,8 @@ namespace InmobiliariaArrow.Controllers
                     TipoPropiedadId = inmuebleDto.IdTipoPropiedad,
                     NumBanios = inmuebleDto.NumBanios,
                     NumRecamaras = inmuebleDto.NumRecamaras,
-                    Superficie = inmuebleDto.Superficie
+                    Superficie = inmuebleDto.Superficie,
+                    Direccion = inmuebleDto.Direccion
                 };
             var inmuebleGuardado = _dbContext.Inmuebles.Add(inmueble).Entity;
             _dbContext.SaveChanges();
@@ -123,7 +124,8 @@ namespace InmobiliariaArrow.Controllers
                     TipoPropiedadId = inmuebleDto.IdTipoPropiedad,
                     NumBanios = inmuebleDto.NumBanios,
                     NumRecamaras = inmuebleDto.NumRecamaras,
-                    Superficie = inmuebleDto.Superficie
+                    Superficie = inmuebleDto.Superficie,
+                    Direccion = inmuebleDto.Direccion
                 };
             _dbContext.Inmuebles.Update(inmueble);
             _dbContext.SaveChanges();
@@ -145,7 +147,7 @@ namespace InmobiliariaArrow.Controllers
         {
             if (fotos.Count < 1)
                 return;
-            var ruta = $@"{CarpetaFotos}/{idInmueble}";
+            var ruta = $"{CarpetaFotos}/{idInmueble}";
             if (!Directory.Exists(ruta))
             {
                 Directory.CreateDirectory(ruta);

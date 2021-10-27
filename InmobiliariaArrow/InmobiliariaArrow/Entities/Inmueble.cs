@@ -25,6 +25,7 @@ namespace InmobiliariaArrow.Entities
         [Column("num_recamaras")]
         public string NumRecamaras { get; set; }
         public string Superficie { get; set; }
+        public string Direccion { get; set; }
     }
    
 }

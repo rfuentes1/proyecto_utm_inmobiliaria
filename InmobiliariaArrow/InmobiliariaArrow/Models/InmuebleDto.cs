@@ -15,6 +15,7 @@ namespace InmobiliariaArrow.Models
         public string Superficie { get; set; }
         
         public string VistaPreviaFoto { get; set; }
+        public string Direccion { get; set; }
     }
 
 }
