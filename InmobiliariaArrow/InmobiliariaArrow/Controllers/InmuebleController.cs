@@ -51,7 +51,37 @@ namespace InmobiliariaArrow.Controllers
             ViewBag.TipoPropiedades = tipoPropiedades;
             return View();
         }
-        
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+             var inmueble = _dbContext.Inmuebles.Find(id);
+             var inmuebleOrigen = new InmuebleDto
+                {
+                    Id = inmueble.IdInmueble,
+                    Titulo = inmueble.Titulo,
+                    Descripcion = inmueble.Descripcion,
+                    Precio = inmueble.Precio,
+                    EstaDisponible = inmueble.EstaDisponible,
+                    Operacion = inmueble.Operacion,
+                    IdTipoPropiedad = inmueble.TipoPropiedadId,
+                    NumBanios = inmueble.NumBanios,
+                    NumRecamaras = inmueble.NumRecamaras,
+                    Superficie = inmueble.Superficie,
+                    VistaPreviaFoto = null
+                };
+             ViewBag.Original = inmuebleOrigen;
+             var tipoPropiedades = _dbContext.TipoPropiedad
+                 .Select(tp =>
+                     new TipoPropiedadDto
+                     {
+                         IdTipoPropiedad = tp.IdTipoPropiedad,
+                         Nombre = tp.Nombre
+                     });
+             ViewBag.TipoPropiedades = tipoPropiedades;
+             ViewData["Estilo"] = "gestion_casas.css";
+            return View(inmuebleOrigen);
+        }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -76,7 +106,31 @@ namespace InmobiliariaArrow.Controllers
             GuardarFotosEnCarpeta(fotos, idInmueble);
             return  RedirectToAction("Index");
         }
-
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(InmuebleDto inmuebleDto, List<IFormFile> fotos)
+        {
+            var inmueble =
+                new Inmueble
+                {
+                    IdInmueble = inmuebleDto.Id,
+                    Titulo = inmuebleDto.Titulo,
+                    Descripcion = inmuebleDto.Descripcion,
+                    Precio = inmuebleDto.Precio,
+                    EstaDisponible = inmuebleDto.EstaDisponible,
+                    Operacion = inmuebleDto.Operacion,
+                    TipoPropiedadId = inmuebleDto.IdTipoPropiedad,
+                    NumBanios = inmuebleDto.NumBanios,
+                    NumRecamaras = inmuebleDto.NumRecamaras,
+                    Superficie = inmuebleDto.Superficie
+                };
+            _dbContext.Inmuebles.Update(inmueble);
+            _dbContext.SaveChanges();
+            GuardarFotosEnCarpeta(fotos, inmuebleDto.Id.ToString());
+            return  RedirectToAction("Index");
+        }
+        
         [HttpPost]
         public IActionResult Delete(int inmuebleId)
         {

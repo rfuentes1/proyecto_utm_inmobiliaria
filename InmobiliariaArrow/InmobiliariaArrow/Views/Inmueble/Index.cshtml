@@ -30,7 +30,7 @@
             <td>@inmueble.Operacion</td>
             <td>@inmueble.Superficie</td>
             <td>
-                <a href="#" class="btn btn-info">
+                <a asp-controller="Inmueble" asp-action="Edit" asp-route-id="@inmueble.Id" class="btn btn-info">
                     <img src="~/assets/img/logo_modificar.png" alt="" style="width: 25px; height: 30px;">
                 </a>
             </td>
