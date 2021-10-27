@@ -7,13 +7,13 @@
     <h1 class="text-light">Inicio de Sesión</h1>
     <h2 class="text-ligth">Administrador de casas</h2>
   </div>
-  <form asp-action="Login" method="post">
+  <form asp-action="Login" method="post" id="loginForm" onsubmit="return estaLleno()">
     <div class="form-group mx-sm-4">
-      <label for="usuario" class="form-label" style="font-size: 20px;">Usuario:</label>
+      <label for="usuario" class="form-label" style="font-size: 20px;">Usuario:*</label>
       <input type="text" class="form-control" name="usuario">
     </div>
     <div class="form-group mx-sm-4">
-      <label for="password" class="form-label" style="font-size: 20px;">Contraseña:</label>
+      <label for="password" class="form-label" style="font-size: 20px;">Contraseña:*</label>
       <input type="password" class="form-control" name="password">
     </div>
     <div class="form-group mx-sm-4">
@@ -25,3 +25,4 @@
     </div>
   </form>
 </div>
+<script src="/assets/js/validacionLogin.js"></script>
