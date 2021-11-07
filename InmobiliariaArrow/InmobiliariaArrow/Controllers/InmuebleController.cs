@@ -104,7 +104,8 @@ namespace InmobiliariaArrow.Controllers
             var inmuebleGuardado = _dbContext.Inmuebles.Add(inmueble).Entity;
             _dbContext.SaveChanges();
             var idInmueble = inmuebleGuardado.IdInmueble.ToString();
-            GuardarFotosEnCarpeta(fotos, idInmueble);
+            if(fotos != null)
+                GuardarFotosEnCarpeta(fotos, idInmueble);
             return  RedirectToAction("Index");
         }
         
