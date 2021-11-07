@@ -139,7 +139,8 @@ namespace InmobiliariaArrow.Controllers
             var inmuebleABorrar = _dbContext.Inmuebles.Find(inmuebleId);
             _dbContext.Inmuebles.Remove(inmuebleABorrar);
             _dbContext.SaveChanges();
-            Directory.Delete($"{CarpetaFotos}/{inmuebleId}", true);
+            if (Directory.Exists($"{CarpetaFotos}/{inmuebleId}"))
+                Directory.Delete($"{CarpetaFotos}/{inmuebleId}", true);
             return RedirectToAction("Index");
         }
         
