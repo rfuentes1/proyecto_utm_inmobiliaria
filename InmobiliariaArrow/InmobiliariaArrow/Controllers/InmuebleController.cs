@@ -87,6 +87,7 @@ namespace InmobiliariaArrow.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(InmuebleDto inmuebleDto, List<IFormFile> fotos)
         {
+            ValidarCampos(inmuebleDto);
             var inmueble =
                 new Inmueble
                 {
@@ -164,6 +165,12 @@ namespace InmobiliariaArrow.Controllers
                 file.CopyTo(fs);
                 fs.Flush();
             }
+        }
+
+        private static void ValidarCampos(InmuebleDto inmuebleDto)
+        {
+            if (inmuebleDto.Titulo is null || inmuebleDto.Descripcion is null)
+                throw new ArgumentException("Todos los campos de inmueble son requeridos");
         }
     }
 }
