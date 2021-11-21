@@ -24,4 +24,5 @@ function validarPrecioYSuperficie() {
         alert(" El campo superficie debe ser número positivo.");
         return false;
     }
+    return true;
 }
