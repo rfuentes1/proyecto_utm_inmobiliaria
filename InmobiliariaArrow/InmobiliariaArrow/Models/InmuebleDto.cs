@@ -12,7 +12,7 @@ namespace InmobiliariaArrow.Models
         public int IdTipoPropiedad { get; set; }
         public string NumBanios { get; set; }
         public string NumRecamaras { get; set; }
-        public string Superficie { get; set; }
+        public Decimal Superficie { get; set; }
         
         public string VistaPreviaFoto { get; set; }
         public string Direccion { get; set; }

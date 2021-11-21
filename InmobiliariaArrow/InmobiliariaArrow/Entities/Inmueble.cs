@@ -24,7 +24,8 @@ namespace InmobiliariaArrow.Entities
         public string NumBanios { get; set; }
         [Column("num_recamaras")]
         public string NumRecamaras { get; set; }
-        public string Superficie { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public Decimal Superficie { get; set; }
         public string Direccion { get; set; }
     }
    

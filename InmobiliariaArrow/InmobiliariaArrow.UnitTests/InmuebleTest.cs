@@ -28,7 +28,7 @@ namespace InmobiliariaArrow.UnitTests
                 IdTipoPropiedad = 1, // Casa
                 NumBanios = "4",
                 NumRecamaras = "3",
-                Superficie = "2000",
+                Superficie = 2000,
                 Direccion = "Altabrisa"
             }, null);
 
@@ -67,7 +67,7 @@ namespace InmobiliariaArrow.UnitTests
                 TipoPropiedadId = 1,
                 NumBanios = "4",
                 NumRecamaras = "3",
-                Superficie = "2000",
+                Superficie = 2000,
                 Direccion = "Altabrisa"
             });
             var inmuebleController = new InmuebleController(baseDeDatos);
