@@ -21,7 +21,7 @@ function validarPrecioYSuperficie() {
     }
     if (isNaN(superficie) || superficie < 0 )
     {
-        alert(" El campo superficie debe ser número positivo.");
+        alert("El campo superficie debe ser número positivo.");
         return false;
     }
     return true;
