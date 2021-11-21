@@ -11,16 +11,16 @@ namespace InmobiliariaArrow.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string usuario, string password)
+        public IActionResult Index(string usuario, string password)
         {
             if (usuario == "rocio" && password == "rocio123")
             {
+                ViewBag.LoginFallido = false;
                 return RedirectToAction("Index", "Inmueble");
             }
-            else
-            {
-                return RedirectToAction("Index");
-            }
+            ViewBag.LoginFallido = true;
+            ViewData["Estilo"] = "login.css";
+            return View();
         }
         
     }
