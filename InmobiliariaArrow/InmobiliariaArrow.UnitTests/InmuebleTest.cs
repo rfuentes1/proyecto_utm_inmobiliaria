@@ -45,7 +45,7 @@ namespace InmobiliariaArrow.UnitTests
 
             // Act
             var excepcionAtrapada = Assert.Throws<ArgumentException>(() =>
-                inmuebleController.Add(new InmuebleDto { Precio = 17000 }, null)
+                inmuebleController.Add(new InmuebleDto {Precio = 17000}, null)
             );
 
             // Assert
@@ -79,6 +79,51 @@ namespace InmobiliariaArrow.UnitTests
             Assert.Null(baseDeDatos.Inmuebles.Find(1));
         }
 
+        [Fact]
+        public void EditarInmueble_RegistroActualizado()
+        {
+            // Arrange
+            var baseDeDatos = CrearBaseDatosVacia();
+            var inmueble = new Inmueble
+            {
+                Titulo = "Casa a editar",
+                Descripcion = "Descripcion prueba",
+                Precio = 17000,
+                EstaDisponible = true,
+                Operacion = "Renta",
+                TipoPropiedadId = 1,
+                NumBanios = "4",
+                NumRecamaras = "3",
+                Superficie = 2000,
+                Direccion = "Altabrisa"
+            };
+            baseDeDatos.Inmuebles.Add(inmueble);
+            baseDeDatos.SaveChanges();
+            baseDeDatos.Entry(inmueble).State = EntityState.Detached;
+
+            var inmuebleController = new InmuebleController(baseDeDatos);
+
+            // Act
+            inmuebleController.Edit(new InmuebleDto
+            {
+                Id = 1,
+                Titulo = "Casa Altabrisa",
+                Descripcion = "Descripcion prueba",
+                Precio = 17000,
+                EstaDisponible = true,
+                Operacion = "Renta",
+                IdTipoPropiedad = 1, // Casa
+                NumBanios = "4",
+                NumRecamaras = "3",
+                Superficie = 2000,
+                Direccion = "Altabrisa"
+            }, null);
+
+            // Assert
+            Assert.Equal("Casa Altabrisa", baseDeDatos.Inmuebles.Find(1).Titulo);
+        }
+
+
         private ApplicationDbContext CrearBaseDatosVacia()
         {
             // Crear la base de datos en memoria con las tablas inmueble y tipo_inmueble
@@ -87,8 +132,8 @@ namespace InmobiliariaArrow.UnitTests
                     .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options);
 
             // Agregar los tipos de inmueble por default
-            dbContext.TipoPropiedad.Add(new TipoPropiedad { IdTipoPropiedad = 1, Nombre = "Casa" });
-            dbContext.TipoPropiedad.Add(new TipoPropiedad { IdTipoPropiedad = 2, Nombre = "Departamento" });
+            dbContext.TipoPropiedad.Add(new TipoPropiedad {IdTipoPropiedad = 1, Nombre = "Casa"});
+            dbContext.TipoPropiedad.Add(new TipoPropiedad {IdTipoPropiedad = 2, Nombre = "Departamento"});
             return dbContext;
         }
     }
